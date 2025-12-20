@@ -36,7 +36,26 @@ docker build -t <username>/service-a .
 docker build -t <username>/service-b .
 ```
 
-_Note_: If using k3s, try to do it.
+_Note_: If using k3s, try to build image by other way.
+
+<details>
+<summary>Click to see the answer</summary>
+
+```bash
+docker build -t <image> .
+
+## Save image
+docker save image -o image.tar
+
+## Import into K3s (containerd)
+sudo k3s ctr images import frontend.tar
+
+## Verify
+sudo k3s ctr images list | grep frontend
+
+```
+
+</details>
 
 ### Apply k8s configure yaml
 
@@ -44,4 +63,30 @@ _Note_: If using k3s, try to do it.
 cd k8s-yaml
 
 kubectl apply -f .
+```
+
+### Verify that the run was successful.
+
+```
+curl http://<NODE_IP>:<NODE_PORT>/api/service-a
+
+=>
+
+{
+  "service": "Service A",
+  "message": "Hello from Service A!",
+  "timestamp": "2025-12-20T05:41:16.195Z",
+  "hostname": "service-a-7fff87d74d-5bb5g"
+}
+
+curl http://<NODE_IP>:<NODE_PORT>/api/service-b
+
+=>
+
+{
+  "service": "Service B",
+  "message": "Hello from Service B!",
+  "timestamp": "2025-12-20T05:41:16.195Z",
+  "hostname": "service-b-7fff87d74d-5bb5g"
+}
 ```
