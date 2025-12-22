@@ -4,15 +4,15 @@ metadata:
   name: jenkins-service
   namespace: jenkins
 spec:
-  type: NodePort
+  type:
   selector:
-    app: jenkins
+    app:
   ports:
     - name: http
-      port: 8080
-      targetPort: 8080
-      nodePort: 32000
+      port:
+      targetPort:
+      nodePort:
     - name: agent
-      port: 50000
-      targetPort: 50000
-      nodePort: 32001
+      port:
+      targetPort:
+      nodePort:
