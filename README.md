@@ -2,7 +2,7 @@
 
 This repository contains a sequence of hands-on Kubernetes labs. Each lab folder (lab1, lab2, ...) contains the lab description and example manifests or code. This README gives students a consistent, step-by-step workflow to complete each lab, common checks, and per-lab quick-start instructions.
 
-## Quick start (one-time)
+## Quick start
 
 1. Clone the repository and change into it:
 
@@ -41,7 +41,7 @@ Deploy Jenkins with a PV/PVC, expose via NodePort, create a Pipeline using the s
 
 Deploy ArgoCD in a dedicated namespace and expose its web interface using a NodePort service.
 
-**Lab 8 — Cluster logging (EFK stack)**
+**Lab 8 — Cluster logging (EFK stack) and Monitoring (Prometheus, Alearmanager, Grafana) **
 
 Deploy Elasticsearch (StatefulSet), Fluent Bit (DaemonSet + ConfigMap) and Kibana in the kube-logging namespace. Verify logs are collected from /var/log/containers and searchable in Kibana.
 
@@ -49,6 +49,6 @@ Deploy Elasticsearch (StatefulSet), Fluent Bit (DaemonSet + ConfigMap) and Kiban
 
 Learn Helm 3: scaffold a chart (helm create), use values.yaml, render templates, install/upgrade/rollback releases, lint/package charts and use local repos. Exercises scaffold a minimal myweb nginx chart.
 
-**Lab Final — (Advanced/holistic lab)**
+**Lab Final — (Advanced lab)**
 
 This final lab consolidates all knowledge and skills from previous labs into a single.
