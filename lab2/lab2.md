@@ -101,6 +101,8 @@ kubectl run nginx-pod --image=nginx --namespace=lab2
 
 </details>
 
+![alt txt](./images/task1.png)
+
 **Task 2:** Create a pod named `busy-pod` with busybox image in the `lab2` namespace. The pod should run the command `sleep 3600`.
 
 <details>
@@ -118,6 +120,8 @@ kubectl run busy-pod --image=busybox --namespace=lab2 --command -- sleep 3600
 kubectl get pods -n lab2
 kubectl describe pod nginx-pod -n lab2
 ```
+![alt txt](./images/task21.png)
+
 
 ### Exercise 2.2: Create Pod using YAML
 
@@ -178,6 +182,10 @@ kubectl logs web-pod -n lab2-yaml
 
 ---
 
+![alt txt](./images/task22.png)
+
+![alt txt](./images/task222.png)
+
 ## Part 3: Deployment Creation
 
 ### Exercise 3.1: Create Deployment using Commands
@@ -211,6 +219,7 @@ kubectl get deployments -n lab2
 kubectl get pods -n lab2
 kubectl describe deployment nginx-deployment -n lab2
 ```
+![alt txt](./images/task31.png)
 
 ### Exercise 3.2: Create Deployment using YAML
 
@@ -281,6 +290,8 @@ kubectl get replicasets -n lab2-yaml
 
 ---
 
+![alt txt](./images/task32.png)
+
 ## Part 4: Service Creation
 
 ### Exercise 4.1: Create Service using Commands
@@ -314,6 +325,7 @@ kubectl get services -n lab2
 kubectl describe service nginx-deployment -n lab2
 kubectl get endpoints -n lab2
 ```
+![alt txt](./images/task41.png)
 
 ### Exercise 4.2: Create Service using YAML
 
@@ -382,6 +394,8 @@ kubectl get service web-nodeport -n lab2-yaml -o yaml
 
 ---
 
+![alt](./images/task42.png)
+
 ## Part 5: Service Connectivity Testing
 
 ### Exercise 5.1: Test Service Connectivity
@@ -409,6 +423,8 @@ kubectl run curl-test --image=curlimages/curl --rm -it --restart=Never --namespa
 </details>
 
 ---
+
+![alt txt](./images/task51.png)
 
 ## Part 6: Complete Application Stack Exercise
 
@@ -445,6 +461,8 @@ kubectl get all -n student-app
 kubectl describe deployment apache-deploy -n student-app
 kubectl get endpoints -n student-app
 ```
+
+![alt](./images/task61.png)
 
 ### Exercise 6.2: Create Full Application Stack with YAML
 
@@ -547,6 +565,8 @@ kubectl describe endpoints apache-service -n student-yaml-app
 
 ---
 
+![alt](./images/task62.png)
+
 ## Part 7: Object Modification
 
 ### Exercise 7.1: Update Objects Imperatively
@@ -592,6 +612,8 @@ kubectl rollout status deployment/nginx-deployment -n lab2
 kubectl get pod nginx-pod -n lab2 --show-labels
 ```
 
+![alt txt](./images/task71.png)
+
 ### Exercise 7.2: Update Objects Declaratively
 
 **Task:** Modify the `web-deployment` to have 2 replicas instead of 3 using the YAML file approach.
@@ -623,6 +645,8 @@ kubectl rollout status deployment/web-deployment -n lab2-yaml
 
 ---
 
+![alt](./images/task72.png)
+
 ## Part 8: Resource Inspection
 
 ### Exercise 8.1: Object Relationships
@@ -652,6 +676,27 @@ kubectl get endpoints -n lab2-yaml
 
 </details>
 
+
+- Xem danh sách các object trong namespace:
+  - Liệt kê Deployment, ReplicSet, pod
+  - Xác nhận các object đã được tạo
+  - Quan sát số lượng Pod tương ứng với replicas của Deployment
+
+ ![alt](./images/task811.png)
+
+- Kiểm tra nhãn (labels) của Pod
+  - Xác định label của Pod
+  - Hiểu cách Deployment/ReplicaSet chọn Pod bằng label selector 
+
+ ![alt](./images/task812.png)
+
+ ![alt](./images/task813.png)
+
+ ![alt](./images/task814.png)
+
+
+
+
 ### Exercise 8.2: Resource Monitoring
 
 **Task:** Check the resource usage and logs for the pods in your deployments.
@@ -674,6 +719,9 @@ kubectl get pods -n lab2 -o name | head -1 | xargs kubectl logs -n lab2
 
 </details>
 
+![alt](./images/task821.png)
+
+![alt](./images/task822.png)
 ## Lab Summary
 
 ### What You Learned

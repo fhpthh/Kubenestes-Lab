@@ -52,6 +52,9 @@ ansible_user=<user_có_quyền_lên_root>
 kube_control_plane
 kube_node
 ```
+![alt txt](../lab1/images/editfile.png)
+
+![alt txt](../lab1/images/resultping.png)
 
 **Setup K8s**
 ansible-playbook -i /inventory/inventory.ini cluster.yml --become --ask-pass --ask-become-pass
