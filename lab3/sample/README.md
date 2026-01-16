@@ -57,6 +57,15 @@ sudo k3s ctr images list | grep frontend
 
 </details>
 
+![text](../images/builFE.png)
+
+![text](../images/servicea.png)
+
+![text](../images/serviceb.png)
+
+![text](../images/imgk3s.png)
+
+
 ### Apply k8s configure yaml
 
 ```
@@ -90,3 +99,10 @@ curl http://<NODE_IP>:<NODE_PORT>/api/service-b
   "hostname": "service-b-7fff87d74d-5bb5g"
 }
 ```
+![alt txt](../images/ayaml.png)
+
+![alt txt](../images/byaml.png)
+
+![alt txt](../images/feyaml.png)
+
+![alt txt](../images/result.png)
