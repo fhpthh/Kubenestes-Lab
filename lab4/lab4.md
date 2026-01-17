@@ -33,3 +33,42 @@ Based on the sample folder, create a PostgreSQL database and use SQL to practice
 # Reference
 
 1. kubernetes.io, "Persistent Volumes", [Open the Link](https://kubernetes.io/docs/concepts/storage/persistent-volumes/).
+
+
+### Kết quả
+
+1. Kiểm tra PVC, Pods, Service:
+```bash
+kubectl get pods
+
+kubectl get pvc
+
+kubectl get svc
+
+```
+
+![alt](./images/pogres.png)
+
+2. Truy cập PostgreSQL
+
+`kubectl exec -it postgresql-5dc54977df-xcwtw -- bash`
+
+![alt](./images/bash.png)
+
+3. Tạo db, import file
+
+```bash
+kubectl exec -it postgresql-5dc54977df-xcwtw -- createdb -U postgres labdb
+
+kubectl exec -i postgresql-5dc54977df-xcwtw -- psql -d  labdb <SQL/labdb2.sql
+
+```
+
+4. Check
+`kubectl exec -it postgresql-5dc54977df-xcwtw -- psql -U postgres -d labdb`
+
+
+![alt](./images/result.png)
+
+Bonus: MySql 
+![alt](./images/mysql.png)
