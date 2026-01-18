@@ -96,9 +96,17 @@ kubectl exec -n jenkins $POD -- cat /var/jenkins_home/secrets/initialAdminPasswo
 
 Use that password to unlock Jenkins in the browser, then install suggested plugins (or install specific plugins you need such as Git, GitHub integration, NodeJS, Pipeline, etc.).
 
+![alt](./image/service.png)
+
+![alt](./image/setup.png)
+
+![alt](./image/login-jenkin.png)
+
+
 ## Create the pipeline (using the sample project)
 
 You can create a Pipeline job in Jenkins and either paste the `Jenkinsfile` content directly or configure the job to use your repository as a Multibranch Pipeline.
+
 
 Basic steps:
 
@@ -108,6 +116,8 @@ Basic steps:
    - Or choose "Pipeline script from SCM" and point it to the repo URL and path to `lab6/sample/Jenkinsfile`.
 
 The sample `Jenkinsfile` (repo: `lab6/sample/jenkinsfile`) simply runs `npm install` and `npm test`.
+
+![alt](./image/scm.png)
 
 ## Run and verify
 
@@ -121,11 +131,20 @@ npm test
 
 2. Trigger the pipeline in Jenkins and watch the console logs. The Test stage should run `jest` and pass if `sum.js` implements the add function.
 
+
 ## Automating with GitHub (optional)
 
 - Install GitHub plugin in Jenkins and configure credentials.
 - Create webhook in GitHub to notify Jenkins on push/pull-request events.
 - Use Multibranch Pipeline or GitHub Organization Folder to automatically pick branches and run builds.
+
+Tạo 1 https cho trigger => dùng `ngrok http 192.168.126.102:32000`
+
+![alt](./image/webhook.png)
+
+![alt](./image/trigger.png)
+
+![alt](./image/)
 
 ## Cleanup
 
