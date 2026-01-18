@@ -21,3 +21,9 @@ kubectl get pods -n argocd
 ```
 kubectl patch svc argocd-server -n argocd -p '{"spec":{"type":"NodePort"}}'
 ```
+![alt](./image/argo.png)
+
+Lấy mật khẩu
+`kubectl -n argocd get secret argocd-initial-admin-secret -o jsonpath="{.data.password}" | base64 -d   `
+
+![alt](./image/login.png)
