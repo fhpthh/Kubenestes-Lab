@@ -1,16 +1,22 @@
 pipeline {
   agent any
-
+  tools {
+    nodejs 'node'
+  }
   stages {
     stage('Install') {
       steps {
-        sh 'npm install'
+        dir('lab6/sample') {
+          sh 'npm install'
+        }
       }
     }
 
     stage('Test') {
       steps {
-        sh 'npm test'
+        dir('lab6/sample') {
+          sh 'npm test'
+        }
       }
     }
   }
